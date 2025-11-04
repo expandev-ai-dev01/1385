@@ -4,6 +4,9 @@ import { RootLayout } from '@/pages/layouts/RootLayout';
 import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const GalleryPage = lazy(() => import('@/pages/Gallery'));
+const AccommodationsPage = lazy(() => import('@/pages/Accommodations'));
+const ServicesPage = lazy(() => import('@/pages/Services'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -28,6 +31,30 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <HomePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'galeria',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <GalleryPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'quartos',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <AccommodationsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'servicos',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ServicesPage />
           </Suspense>
         ),
       },
